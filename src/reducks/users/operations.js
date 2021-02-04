@@ -3,7 +3,7 @@ import {push} from 'connected-react-router';
 import {auth, db, FirebaseTimestamp} from '../../firebase/index';
 
 export const listenAuthState = () => {
-  return async(dispatch) => {
+  return async (dispatch) => {
     return auth.onAuthStateChanged(user => {
       if(user) {
         const uid = user.uid
@@ -12,7 +12,7 @@ export const listenAuthState = () => {
           .then(snapshot => {
             const data = snapshot.data()
 
-            dispatch(signOutAction({
+            dispatch(signInAction({
               isSignedIn: true,
               role: data.role,
               uid: uid,

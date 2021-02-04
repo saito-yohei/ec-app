@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {TextInput, PrimaryButton} from '../conponents/UIkit';
+import {TextInput, PrimaryButton} from '../components/UIkit';
 import {signIn} from '../reducks/users/operations';
 import {useDispatch} from 'react-redux';
 import {push} from 'connected-react-router';

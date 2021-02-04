@@ -2,7 +2,7 @@ import {createSelector} from 'reselect';
 
 const usersSelector = (state) => state.users;　　//ここでのstateはStore全体で管理しているstateのこと
 
-export const getIsSignedIn = createSelector(
+export const getSignedIn = createSelector(
   [usersSelector],
   state => state.isSignedIn
 );
