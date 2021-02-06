@@ -2,7 +2,8 @@ import React from 'react';
 import {getUserId, getUsername} from '../reducks/users/selectors';
 import {useSelector, useDispatch} from 'react-redux';
 import {signOut} from '../reducks/users/operations';
-import {PrimaryButton} from '../conponents/UIkit';
+import {PrimaryButton} from '../components/UIkit';
+import {push} from 'connected-react-router';
 
 const Home = () => {
   const selector = useSelector(state => state);
@@ -19,6 +20,12 @@ const Home = () => {
         <PrimaryButton 
           label={"Sign Out"}
           onClick={() => dispatch(signOut())}
+        />
+      </div>
+      <div className="center">
+        <PrimaryButton 
+          label={"商品登録へ"}
+          onClick={() => dispatch(push('/product/edit'))}
         />
       </div>
     </div>
